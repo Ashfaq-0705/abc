@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048 Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Clear+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <div class="header">
+            <h1>2048</h1>
+            <div class="score-container">
+                <div class="score-box">
+                    <div class="score-label">SCORE</div>
+                    <div class="score-value" id="score">0</div>
+                </div>
+                <div class="score-box">
+                    <div class="score-label">BEST</div>
+                    <div class="score-value" id="best-score">0</div>
+                </div>
+            </div>
+        </div>
+        <div class="game-info">
+            <p class="subtitle">Join the tiles, get to <strong>2048!</strong></p>
+            <button class="info-btn" id="how-to-play-btn">How to Play</button>
+        </div>
+        <div class="game-board">
+            <!-- 16 cells -->
+            <div class="cell" id="cell-0"></div>
+            <div class="cell" id="cell-1"></div>
+            <div class="cell" id="cell-2"></div>
+            <div class="cell" id="cell-3"></div>
+            <div class="cell" id="cell-4"></div>
+            <div class="cell" id="cell-5"></div>
+            <div class="cell" id="cell-6"></div>
+            <div class="cell" id="cell-7"></div>
+            <div class="cell" id="cell-8"></div>
+            <div class="cell" id="cell-9"></div>
+            <div class="cell" id="cell-10"></div>
+            <div class="cell" id="cell-11"></div>
+            <div class="cell" id="cell-12"></div>
+            <div class="cell" id="cell-13"></div>
+            <div class="cell" id="cell-14"></div>
+            <div class="cell" id="cell-15"></div>
+        </div>
+        <div class="controls">
+            <button id="new-game" class="btn-primary">New Game</button>
+            <button id="restart-btn" class="btn-secondary">Restart</button>
+            <button id="undo-btn" class="btn-secondary">Undo</button>
+        </div>
+    </div>
+
+    <!-- Modal Overlay -->
+    <div id="modal-overlay" class="modal-overlay">
+        <div class="modal-content">
+            <h2 id="modal-title">Game Over!</h2>
+            <p id="modal-message">Try again to beat your best score!</p>
+            <div class="modal-scores">
+                <div class="modal-score-item">
+                    <span>Final Score:</span>
+                    <span id="modal-final-score">0</span>
+                </div>
+                <div class="modal-score-item">
+                    <span>Best Score:</span>
+                    <span id="modal-best-score">0</span>
+                </div>
+            </div>
+            <button id="modal-close" class="btn-primary">Continue</button>
+        </div>
+    </div>
+
+    <!-- How to Play Modal -->
+    <div id="how-to-play-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h2>How to Play</h2>
+            <div class="instructions">
+                <p><strong>Goal:</strong> Combine tiles with the same number to reach 2048!</p>
+                <ul>
+                    <li>Use <strong>Arrow Keys</strong> or <strong>Swipe</strong> to move tiles</li>
+                    <li>When two tiles with the same number touch, they merge into one</li>
+                    <li>After each move, a new tile (2 or 4) appears</li>
+                    <li>Keep merging to reach higher numbers!</li>
+                </ul>
+                <p><strong>Tips:</strong></p>
+                <ul>
+                    <li>Try to keep your highest tile in a corner</li>
+                    <li>Focus on one direction (usually down or right)</li>
+                    <li>Plan your moves ahead to avoid getting stuck</li>
+                </ul>
+            </div>
+            <button id="close-instructions" class="btn-primary">Got it!</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
